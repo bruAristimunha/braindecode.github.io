@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-theme="light">
+<html lang="en" data-content_root="" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Training a Braindecode model in PyTorch &#8212; Braindecode 0.8 documentation</title>
+    <title>Training a Braindecode model in PyTorch &#8212; Braindecode 0.8.2 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=09706775" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../../_static/documentation_options.js?v=aad85e6b"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=19e75281"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7Q43R82K6D"></script>
     <script>
@@ -52,15 +52,9 @@
                 gtag('js', new Date());
                 gtag('config', 'G-7Q43R82K6D');
             </script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-7Q43R82K6D');
-            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/model_building/plot_train_in_pure_pytorch_and_pytorch_lightning';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.14.3';
+        DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://braindecode.org/stable/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.8';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
@@ -135,6 +129,7 @@
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
@@ -158,7 +153,8 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -218,6 +214,7 @@
       
         <div class="navbar-item navbar-persistent--container">
           
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -231,6 +228,7 @@
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -271,6 +269,7 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -304,7 +303,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -364,6 +364,7 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -403,7 +404,8 @@ document.write(`
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
@@ -506,7 +508,7 @@ document.write(`
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="training-a-braindecode-model-in-pytorch">
-<span id="sphx-glr-auto-examples-model-building-plot-train-in-pure-pytorch-and-pytorch-lightning-py"></span><h1>Training a Braindecode model in PyTorch<a class="headerlink" href="#training-a-braindecode-model-in-pytorch" title="Link to this heading">#</a></h1>
+<span id="sphx-glr-auto-examples-model-building-plot-train-in-pure-pytorch-and-pytorch-lightning-py"></span><h1>Training a Braindecode model in PyTorch<a class="headerlink" href="#training-a-braindecode-model-in-pytorch" title="Permalink to this heading">#</a></h1>
 <p>This tutorial shows you how to train a Braindecode model with PyTorch. The data
 preparation and model instantiation steps are identical to that of the tutorial
 <a class="reference external" href="./plot_how_train_test_and_tune.html">How to train, test and tune your model</a></p>
@@ -539,7 +541,7 @@ will not further elaborate on these parts and you can feel free to skip them.</p
 </ul>
 </nav>
 <section id="why-should-i-care-about-model-evaluation">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Why should I care about model evaluation?</a><a class="headerlink" href="#why-should-i-care-about-model-evaluation" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Why should I care about model evaluation?</a><a class="headerlink" href="#why-should-i-care-about-model-evaluation" title="Permalink to this heading">#</a></h2>
 <p>Short answer: To produce reliable results!</p>
 <p>In machine learning, we usually follow the scheme of splitting the
 data into two parts, training and testing sets. It sounds like a
@@ -569,25 +571,51 @@ training.</p>
 </div>
 </section>
 <section id="loading-preprocessing-defining-a-model-etc">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Loading, preprocessing, defining a model, etc.</a><a class="headerlink" href="#loading-preprocessing-defining-a-model-etc" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Loading, preprocessing, defining a model, etc.</a><a class="headerlink" href="#loading-preprocessing-defining-a-model-etc" title="Permalink to this heading">#</a></h2>
 <section id="loading-the-dataset-structure">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Loading the Dataset Structure</a><a class="headerlink" href="#loading-the-dataset-structure" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Loading the Dataset Structure</a><a class="headerlink" href="#loading-the-dataset-structure" title="Permalink to this heading">#</a></h3>
 <p>Here, we have a data structure with equal behavior to the Pytorch Dataset.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">braindecode.datasets</span> <span class="kn">import</span> <a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class"><span class="n">MOABBDataset</span></a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">braindecode.datasets</span> <span class="kn">import</span> <a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class"><span class="n">MOABBDataset</span></a>
 
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject_id</span></a> <span class="o">=</span> <span class="mi">3</span>
-<a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class"><span class="n">MOABBDataset</span></a><span class="p">(</span><span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;BNCI2014_001&quot;</span><span class="p">,</span> <span class="n">subject_ids</span><span class="o">=</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject_id</span></a><span class="p">])</span>
+<a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class"><span class="n">MOABBDataset</span></a><span class="p">(</span><span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;BNCI2014_001&quot;</span><span class="p">,</span> <span class="n">subject_ids</span><span class="o">=</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject_id</span></a><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
+48 events found
+Event IDs: [1 2 3 4]
 </pre></div>
 </div>
 </section>
 <section id="preprocessing-the-offline-transformation-of-the-raw-dataset">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Preprocessing, the offline transformation of the raw dataset</a><a class="headerlink" href="#preprocessing-the-offline-transformation-of-the-raw-dataset" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Preprocessing, the offline transformation of the raw dataset</a><a class="headerlink" href="#preprocessing-the-offline-transformation-of-the-raw-dataset" title="Permalink to this heading">#</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">braindecode.preprocessing</span> <span class="kn">import</span> <span class="p">(</span>
-    <a href="../../generated/braindecode.preprocessing.exponential_moving_standardize.html#braindecode.preprocessing.exponential_moving_standardize" title="braindecode.preprocessing.exponential_moving_standardize" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">exponential_moving_standardize</span></a><span class="p">,</span>
-    <a href="../../generated/braindecode.preprocessing.preprocess.html#braindecode.preprocessing.preprocess" title="braindecode.preprocessing.preprocess" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">preprocess</span></a><span class="p">,</span>
-    <a href="../../generated/braindecode.preprocessing.Preprocessor.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">,</span>
+    <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.exponential_moving_standardize" title="braindecode.preprocessing.exponential_moving_standardize" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">exponential_moving_standardize</span></a><span class="p">,</span>
+    <a href="../../source/braindecode.preprocessing.html#module-braindecode.preprocessing.preprocess" title="braindecode.preprocessing.preprocess" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-module"><span class="n">preprocess</span></a><span class="p">,</span>
+    <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">,</span>
 <span class="p">)</span>
 
 <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">low_cut_hz</span></a> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># low cut frequency for filtering</span>
@@ -597,33 +625,33 @@ training.</p>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">init_block_size</span></a> <span class="o">=</span> <span class="mi">1000</span>
 
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">transforms</span></a> <span class="o">=</span> <span class="p">[</span>
-    <a href="../../generated/braindecode.preprocessing.Preprocessor.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span><span class="s2">&quot;pick_types&quot;</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>  <span class="c1"># Keep EEG sensors</span>
-    <a href="../../generated/braindecode.preprocessing.Preprocessor.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span>
+    <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span><span class="s2">&quot;pick_types&quot;</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>  <span class="c1"># Keep EEG sensors</span>
+    <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span>
         <span class="k">lambda</span> <span class="n">data</span><span class="p">,</span> <span class="n">factor</span><span class="p">:</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">multiply</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span>  <span class="c1"># Convert from V to uV</span>
         <span class="n">factor</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span>
     <span class="p">),</span>
-    <a href="../../generated/braindecode.preprocessing.Preprocessor.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span><span class="s2">&quot;filter&quot;</span><span class="p">,</span> <span class="n">l_freq</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">low_cut_hz</span></a><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">high_cut_hz</span></a><span class="p">),</span>  <span class="c1"># Bandpass filter</span>
-    <a href="../../generated/braindecode.preprocessing.Preprocessor.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span>
-        <a href="../../generated/braindecode.preprocessing.exponential_moving_standardize.html#braindecode.preprocessing.exponential_moving_standardize" title="braindecode.preprocessing.exponential_moving_standardize" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">exponential_moving_standardize</span></a><span class="p">,</span>  <span class="c1"># Exponential moving standardization</span>
+    <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span><span class="s2">&quot;filter&quot;</span><span class="p">,</span> <span class="n">l_freq</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">low_cut_hz</span></a><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">high_cut_hz</span></a><span class="p">),</span>  <span class="c1"># Bandpass filter</span>
+    <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.Preprocessor" title="braindecode.preprocessing.Preprocessor" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-class"><span class="n">Preprocessor</span></a><span class="p">(</span>
+        <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.exponential_moving_standardize" title="braindecode.preprocessing.exponential_moving_standardize" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">exponential_moving_standardize</span></a><span class="p">,</span>  <span class="c1"># Exponential moving standardization</span>
         <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">factor_new</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">factor_new</span></a><span class="p">,</span>
         <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">init_block_size</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">init_block_size</span></a><span class="p">,</span>
     <span class="p">),</span>
 <span class="p">]</span>
 
 <span class="c1"># Transform the data</span>
-<a href="../../generated/braindecode.preprocessing.preprocess.html#braindecode.preprocessing.preprocess" title="braindecode.preprocessing.preprocess" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">preprocess</span></a><span class="p">(</span><a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">transforms</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a href="../../source/braindecode.preprocessing.html#module-braindecode.preprocessing.preprocess" title="braindecode.preprocessing.preprocess" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-module"><span class="n">preprocess</span></a><span class="p">(</span><a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">transforms</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/work/braindecode/braindecode/braindecode/preprocessing/preprocess.py:55: UserWarning: Preprocessing choices with lambda functions cannot be saved.
-  warn(&#39;Preprocessing choices with lambda functions cannot be saved.&#39;)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/bru/PycharmProjects/braindecode-bru/braindecode/preprocessing/preprocess.py:60: UserWarning: Preprocessing choices with lambda functions cannot be saved.
+  warn(&quot;Preprocessing choices with lambda functions cannot be saved.&quot;)
 
-&lt;braindecode.datasets.moabb.MOABBDataset object at 0x7f4541374df0&gt;
+&lt;braindecode.datasets.moabb.MOABBDataset object at 0x7fbdc3008940&gt;
 </pre></div>
 </div>
 </section>
 <section id="cut-compute-windows">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Cut Compute Windows</a><a class="headerlink" href="#cut-compute-windows" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">braindecode.preprocessing</span> <span class="kn">import</span> <a href="../../generated/braindecode.preprocessing.create_windows_from_events.html#braindecode.preprocessing.create_windows_from_events" title="braindecode.preprocessing.create_windows_from_events" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">create_windows_from_events</span></a>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Cut Compute Windows</a><a class="headerlink" href="#cut-compute-windows" title="Permalink to this heading">#</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">braindecode.preprocessing</span> <span class="kn">import</span> <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.create_windows_from_events" title="braindecode.preprocessing.create_windows_from_events" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">create_windows_from_events</span></a>
 
 <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">trial_start_offset_seconds</span></a> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
 <span class="c1"># Extract sampling frequency, check that they are same in all datasets</span>
@@ -634,8 +662,8 @@ training.</p>
 
 <span class="c1"># Create windows using braindecode function for this. It needs parameters to define how</span>
 <span class="c1"># trials should be used.</span>
-<a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">windows_dataset</span></a> <span class="o">=</span> <a href="../../generated/braindecode.preprocessing.create_windows_from_events.html#braindecode.preprocessing.create_windows_from_events" title="braindecode.preprocessing.create_windows_from_events" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">create_windows_from_events</span></a><span class="p">(</span>
-    <a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">,</span>
+<a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">windows_dataset</span></a> <span class="o">=</span> <a href="../../source/braindecode.preprocessing.html#braindecode.preprocessing.create_windows_from_events" title="braindecode.preprocessing.create_windows_from_events" class="sphx-glr-backref-module-braindecode-preprocessing sphx-glr-backref-type-py-function"><span class="n">create_windows_from_events</span></a><span class="p">(</span>
+    <a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">,</span>
     <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">trial_start_offset_samples</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">trial_start_offset_samples</span></a><span class="p">,</span>
     <span class="n">trial_stop_offset_samples</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -658,23 +686,23 @@ Used Annotations descriptions: [&#39;feet&#39;, &#39;left_hand&#39;, &#39;right_
 </div>
 </section>
 <section id="create-pytorch-model">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Create Pytorch model</a><a class="headerlink" href="#create-pytorch-model" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Create Pytorch model</a><a class="headerlink" href="#create-pytorch-model" title="Permalink to this heading">#</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">braindecode.models</span> <span class="kn">import</span> <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class"><span class="n">ShallowFBCSPNet</span></a>
-<span class="kn">from</span> <span class="nn">braindecode.util</span> <span class="kn">import</span> <a href="../../generated/braindecode.util.set_random_seeds.html#braindecode.util.set_random_seeds" title="braindecode.util.set_random_seeds" class="sphx-glr-backref-module-braindecode-util sphx-glr-backref-type-py-function"><span class="n">set_random_seeds</span></a>
+<span class="kn">from</span> <span class="nn">braindecode.util</span> <span class="kn">import</span> <a href="../../source/braindecode.html#braindecode.util.set_random_seeds" title="braindecode.util.set_random_seeds" class="sphx-glr-backref-module-braindecode-util sphx-glr-backref-type-py-function"><span class="n">set_random_seeds</span></a>
 
 <a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.cuda.is_available.html#torch.cuda.is_available" title="torch.cuda.is_available" class="sphx-glr-backref-module-torch-cuda sphx-glr-backref-type-py-function"><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span></a><span class="p">()</span>  <span class="c1"># check if GPU is available, if True chooses to use it</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
 <span class="k">if</span> <a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a><span class="p">:</span>
     <a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cudnn</span><span class="o">.</span><span class="n">benchmark</span></a> <span class="o">=</span> <span class="kc">True</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">seed</span></a> <span class="o">=</span> <span class="mi">20200220</span>
-<a href="../../generated/braindecode.util.set_random_seeds.html#braindecode.util.set_random_seeds" title="braindecode.util.set_random_seeds" class="sphx-glr-backref-module-braindecode-util sphx-glr-backref-type-py-function"><span class="n">set_random_seeds</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">seed</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">seed</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a><span class="p">)</span>
+<a href="../../source/braindecode.html#braindecode.util.set_random_seeds" title="braindecode.util.set_random_seeds" class="sphx-glr-backref-module-braindecode-util sphx-glr-backref-type-py-function"><span class="n">set_random_seeds</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">seed</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">seed</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cuda</span></a><span class="p">)</span>
 
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_classes</span></a> <span class="o">=</span> <span class="mi">4</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">classes</span></a> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_classes</span></a><span class="p">))</span>
 <span class="c1"># Extract number of chans and time steps from dataset</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_channels</span></a> <span class="o">=</span> <a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">windows_dataset</span></a><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">input_window_samples</span></a> <span class="o">=</span> <a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">windows_dataset</span></a><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_channels</span></a> <span class="o">=</span> <a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">windows_dataset</span></a><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">input_window_samples</span></a> <span class="o">=</span> <a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">windows_dataset</span></a><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># The ShallowFBCSPNet is a `nn.Sequential` model</span>
 
@@ -693,10 +721,10 @@ Used Annotations descriptions: [&#39;feet&#39;, &#39;left_hand&#39;, &#39;right_
     <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.cuda" title="torch.nn.Module.cuda" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">cuda</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/work/braindecode/braindecode/braindecode/models/base.py:23: UserWarning: ShallowFBCSPNet: &#39;input_window_samples&#39; is depreciated. Use &#39;n_times&#39; instead.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/bru/PycharmProjects/braindecode-bru/braindecode/models/base.py:23: UserWarning: ShallowFBCSPNet: &#39;input_window_samples&#39; is depreciated. Use &#39;n_times&#39; instead.
   warnings.warn(
-/home/runner/work/braindecode/braindecode/braindecode/models/base.py:180: UserWarning: LogSoftmax final layer will be removed! Please adjust your loss function accordingly (e.g. CrossEntropyLoss)!
-  warnings.warn(&quot;LogSoftmax final layer will be removed! &quot; +
+/home/bru/PycharmProjects/braindecode-bru/braindecode/models/base.py:175: UserWarning: LogSoftmax final layer will be removed! Please adjust your loss function accordingly (e.g. CrossEntropyLoss)!
+  warnings.warn(
 ============================================================================================================================================
 Layer (type (var_name):depth-idx)        Input Shape               Output Shape              Param #                   Kernel Shape
 ============================================================================================================================================
@@ -729,9 +757,9 @@ Estimated Total Size (MB): 0.50
 </section>
 </section>
 <section id="how-to-train-and-evaluate-your-model">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">How to train and evaluate your model</a><a class="headerlink" href="#how-to-train-and-evaluate-your-model" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">How to train and evaluate your model</a><a class="headerlink" href="#how-to-train-and-evaluate-your-model" title="Permalink to this heading">#</a></h2>
 <section id="split-dataset-into-train-and-test">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Split dataset into train and test</a><a class="headerlink" href="#split-dataset-into-train-and-test" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Split dataset into train and test</a><a class="headerlink" href="#split-dataset-into-train-and-test" title="Permalink to this heading">#</a></h3>
 <p>We can easily split the dataset using additional info stored in the
 description attribute, in this case the <code class="docutils literal notranslate"><span class="pre">session</span></code> column. We
 select <code class="docutils literal notranslate"><span class="pre">Train</span></code> for training and <code class="docutils literal notranslate"><span class="pre">test</span></code> for testing.
@@ -743,14 +771,14 @@ two-fold split into train_set and test_set always remains the same.
 Remember that you are not allowed to use the test_set during any
 stage of training or tuning.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">splitted</span></a> <span class="o">=</span> <a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset.split" title="braindecode.datasets.BaseConcatDataset.split" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-method"><span class="n">windows_dataset</span><span class="o">.</span><span class="n">split</span></a><span class="p">(</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
-<a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_set</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">splitted</span></a><span class="p">[</span><span class="s1">&#39;0train&#39;</span><span class="p">]</span>  <span class="c1"># Session train</span>
-<a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_set</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">splitted</span></a><span class="p">[</span><span class="s1">&#39;1test&#39;</span><span class="p">]</span>  <span class="c1"># Session evaluation</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">splitted</span></a> <span class="o">=</span> <a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset.split" title="braindecode.datasets.BaseConcatDataset.split" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-method"><span class="n">windows_dataset</span><span class="o">.</span><span class="n">split</span></a><span class="p">(</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_set</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">splitted</span></a><span class="p">[</span><span class="s2">&quot;0train&quot;</span><span class="p">]</span>  <span class="c1"># Session train</span>
+<a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_set</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">splitted</span></a><span class="p">[</span><span class="s2">&quot;1test&quot;</span><span class="p">]</span>  <span class="c1"># Session evaluation</span>
 </pre></div>
 </div>
 </section>
 <section id="option-1-pure-pytorch-training-loop">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Option 1: Pure PyTorch training loop</a><a class="headerlink" href="#option-1-pure-pytorch-training-loop" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Option 1: Pure PyTorch training loop</a><a class="headerlink" href="#option-1-pure-pytorch-training-loop" title="Permalink to this heading">#</a></h3>
 <img alt="Pytorch logo" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" />
 <p><cite>model</cite> is an instance of <cite>torch.nn.Module</cite>, and can as such be trained
 using PyTorch optimization capabilities.
@@ -772,7 +800,7 @@ performance of your model less credible.</p>
 chosen to make this tutorial fast to run and build. Real-world values
 would be higher, especially when it comes to n_epochs.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="torch.nn.Module" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class"><span class="n">Module</span></a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="torch.nn.Module" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class"><span class="n">Module</span></a>
 <span class="kn">from</span> <span class="nn">torch.optim.lr_scheduler</span> <span class="kn">import</span> <span class="n">LRScheduler</span>
 <span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a>
 
@@ -785,19 +813,26 @@ would be higher, especially when it comes to n_epochs.</p>
 <p>The following method runs one training epoch over the dataloader for the
 given model. It needs a loss function, optimization algorithm, and
 learning rate updating callback.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="c1"># Define a method for training one epoch</span>
 
 
 <span class="k">def</span> <span class="nf">train_one_epoch</span><span class="p">(</span>
-        <span class="n">dataloader</span><span class="p">:</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">,</span> <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">:</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="torch.nn.Module" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class"><span class="n">Module</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span>
-        <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a><span class="p">:</span> <span class="n">LRScheduler</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epoch</span></a><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a><span class="p">,</span> <span class="n">print_batch_stats</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">dataloader</span><span class="p">:</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">,</span>
+    <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">:</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="torch.nn.Module" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class"><span class="n">Module</span></a><span class="p">,</span>
+    <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">,</span>
+    <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span>
+    <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a><span class="p">:</span> <span class="n">LRScheduler</span><span class="p">,</span>
+    <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epoch</span></a><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a><span class="p">,</span>
+    <span class="n">print_batch_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">):</span>
     <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.train" title="torch.nn.Module.train" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">train</span></a><span class="p">()</span>  <span class="c1"># Set the model to training mode</span>
     <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loss</span></a><span class="p">,</span> <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
 
-    <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">),</span>
-                        <span class="n">disable</span><span class="o">=</span><span class="ow">not</span> <span class="n">print_batch_stats</span><span class="p">)</span>
+    <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span>
+        <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">),</span> <span class="n">disable</span><span class="o">=</span><span class="ow">not</span> <span class="n">print_batch_stats</span>
+    <span class="p">)</span>
 
     <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">progress_bar</span><span class="p">:</span>
         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a><span class="p">)</span>
@@ -821,17 +856,15 @@ learning rate updating callback.</p>
     <span class="c1"># Update the learning rate</span>
     <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
-    <span class="n">correct</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">)</span>
+    <span class="n">correct</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">)</span>
     <span class="k">return</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loss</span></a> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">),</span> <span class="n">correct</span>
 </pre></div>
 </div>
 <p>Very similarly, the evaluation function loops over the entire dataloader
 and accumulate the metrics, but doesn’t update the model weights.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">test_model</span><span class="p">(</span>
-    <span class="n">dataloader</span><span class="p">:</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">,</span> <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">:</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="torch.nn.Module" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class"><span class="n">Module</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">,</span> <span class="n">print_batch_stats</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">):</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><a href="../../generated/braindecode.datasets.MOABBDataset.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">test_model</span><span class="p">(</span><span class="n">dataloader</span><span class="p">:</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">,</span> <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">:</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="torch.nn.Module" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class"><span class="n">Module</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">,</span> <span class="n">print_batch_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><a href="../../source/braindecode.datasets.html#braindecode.datasets.MOABBDataset" title="braindecode.datasets.MOABBDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">)</span>
     <span class="n">n_batches</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)</span>
     <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.eval" title="torch.nn.Module.eval" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">eval</span></a><span class="p">()</span>  <span class="c1"># Switch to evaluation mode</span>
     <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loss</span></a><span class="p">,</span> <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
@@ -851,24 +884,19 @@ and accumulate the metrics, but doesn’t update the model weights.</p>
 
         <span class="k">if</span> <span class="n">print_batch_stats</span><span class="p">:</span>
             <span class="n">progress_bar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Batch </span><span class="si">{</span><span class="n">batch_idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)</span><span class="si">}</span><span class="s2">, &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;Loss: </span><span class="si">{</span><span class="n">batch_loss</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Batch </span><span class="si">{</span><span class="n">batch_idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)</span><span class="si">}</span><span class="s2">, &quot;</span> <span class="sa">f</span><span class="s2">&quot;Loss: </span><span class="si">{</span><span class="n">batch_loss</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span>
 
     <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loss</span></a> <span class="o">/=</span> <span class="n">n_batches</span>
     <span class="n">correct</span> <span class="o">/=</span> <span class="n">size</span>
 
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;Test Accuracy: </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">correct</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%, Test Loss: </span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loss</span></a><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Accuracy: </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">correct</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%, Test Loss: </span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loss</span></a><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loss</span></a><span class="p">,</span> <span class="n">correct</span>
 
 
 <span class="c1"># Define the optimization</span>
-<a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span></a><span class="p">(</span><a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.parameters" title="torch.nn.Module.parameters" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">parameters</span></a><span class="p">(),</span>
-                              <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="p">)</span>
-<a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span></a><span class="p">(</span><a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span>
-                                                       <span class="n">T_max</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_epochs</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span></a><span class="p">(</span><a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.parameters" title="torch.nn.Module.parameters" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">parameters</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="p">)</span>
+<a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span></a><span class="p">(</span><a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_epochs</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c1"># Define the loss function</span>
 <span class="c1"># We used the NNLoss function, which expects log probabilities as input</span>
 <span class="c1"># (which is the case for our model output)</span>
@@ -876,14 +904,20 @@ and accumulate the metrics, but doesn’t update the model weights.</p>
 
 <span class="c1"># train_set and test_set are instances of torch Datasets, and can seamlessly be</span>
 <span class="c1"># wrapped in data loaders.</span>
-<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loader</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">(</span><a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_set</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loader</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">(</span><a href="../../generated/braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_set</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="p">)</span>
+<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loader</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">(</span><a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_set</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loader</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class"><span class="n">DataLoader</span></a><span class="p">(</span><a href="../../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset" class="sphx-glr-backref-module-braindecode-datasets sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_set</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">batch_size</span></a><span class="p">)</span>
 
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epoch</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_epochs</span></a> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epoch</span></a><span class="si">}</span><span class="s2">/</span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_epochs</span></a><span class="si">}</span><span class="s2">: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
     <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loss</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_accuracy</span></a> <span class="o">=</span> <span class="n">train_one_epoch</span><span class="p">(</span>
-        <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loader</span></a><span class="p">,</span> <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epoch</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a><span class="p">,</span>
+        <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">train_loader</span></a><span class="p">,</span>
+        <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">,</span>
+        <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">,</span>
+        <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span>
+        <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a><span class="p">,</span>
+        <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epoch</span></a><span class="p">,</span>
+        <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device</span></a><span class="p">,</span>
     <span class="p">)</span>
 
     <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loss</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_accuracy</span></a> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span><a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="torch.utils.data.DataLoader" class="sphx-glr-backref-module-torch-utils-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">test_loader</span></a><span class="p">,</span> <a href="../../generated/braindecode.models.ShallowFBCSPNet.html#braindecode.models.ShallowFBCSPNet" title="braindecode.models.ShallowFBCSPNet" class="sphx-glr-backref-module-braindecode-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">model</span></a><span class="p">,</span> <a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss" title="torch.nn.NLLLoss" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loss_fn</span></a><span class="p">)</span>
@@ -898,66 +932,66 @@ and accumulate the metrics, but doesn’t update the model weights.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/2:
   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Epoch 1/2, Batch 1/5, Loss: 1.784639:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Epoch 1/2, Batch 1/5, Loss: 1.784639:  20%|██        | 1/5 [00:00&lt;00:01,  2.81it/s]
-Epoch 1/2, Batch 2/5, Loss: 1.497504:  20%|██        | 1/5 [00:00&lt;00:01,  2.81it/s]
-Epoch 1/2, Batch 2/5, Loss: 1.497504:  40%|████      | 2/5 [00:00&lt;00:00,  3.24it/s]
-Epoch 1/2, Batch 3/5, Loss: 1.544960:  40%|████      | 2/5 [00:00&lt;00:00,  3.24it/s]
-Epoch 1/2, Batch 3/5, Loss: 1.544960:  60%|██████    | 3/5 [00:00&lt;00:00,  3.38it/s]
-Epoch 1/2, Batch 4/5, Loss: 1.552846:  60%|██████    | 3/5 [00:01&lt;00:00,  3.38it/s]
-Epoch 1/2, Batch 4/5, Loss: 1.552846:  80%|████████  | 4/5 [00:01&lt;00:00,  3.38it/s]
-Epoch 1/2, Batch 5/5, Loss: 1.648800:  80%|████████  | 4/5 [00:01&lt;00:00,  3.38it/s]
-Epoch 1/2, Batch 5/5, Loss: 1.648800: 100%|██████████| 5/5 [00:01&lt;00:00,  4.14it/s]
-Epoch 1/2, Batch 5/5, Loss: 1.648800: 100%|██████████| 5/5 [00:01&lt;00:00,  3.69it/s]
+Epoch 1/2, Batch 1/5, Loss: 1.590727:   0%|          | 0/5 [00:00&lt;?, ?it/s]
+Epoch 1/2, Batch 1/5, Loss: 1.590727:  20%|██        | 1/5 [00:00&lt;00:01,  3.13it/s]
+Epoch 1/2, Batch 2/5, Loss: 1.602779:  20%|██        | 1/5 [00:00&lt;00:01,  3.13it/s]
+Epoch 1/2, Batch 2/5, Loss: 1.602779:  40%|████      | 2/5 [00:00&lt;00:00,  3.50it/s]
+Epoch 1/2, Batch 3/5, Loss: 1.717662:  40%|████      | 2/5 [00:00&lt;00:00,  3.50it/s]
+Epoch 1/2, Batch 3/5, Loss: 1.717662:  60%|██████    | 3/5 [00:00&lt;00:00,  3.68it/s]
+Epoch 1/2, Batch 4/5, Loss: 1.489191:  60%|██████    | 3/5 [00:01&lt;00:00,  3.68it/s]
+Epoch 1/2, Batch 4/5, Loss: 1.489191:  80%|████████  | 4/5 [00:01&lt;00:00,  3.77it/s]
+Epoch 1/2, Batch 5/5, Loss: 1.812099:  80%|████████  | 4/5 [00:01&lt;00:00,  3.77it/s]
+Epoch 1/2, Batch 5/5, Loss: 1.812099: 100%|██████████| 5/5 [00:01&lt;00:00,  4.56it/s]
+Epoch 1/2, Batch 5/5, Loss: 1.812099: 100%|██████████| 5/5 [00:01&lt;00:00,  4.06it/s]
 
   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Batch 1/5, Loss: 4.067336:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Batch 2/5, Loss: 4.475679:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Batch 2/5, Loss: 4.475679:  40%|████      | 2/5 [00:00&lt;00:00, 14.75it/s]
-Batch 3/5, Loss: 4.224905:  40%|████      | 2/5 [00:00&lt;00:00, 14.75it/s]
-Batch 4/5, Loss: 4.333737:  40%|████      | 2/5 [00:00&lt;00:00, 14.75it/s]
-Batch 4/5, Loss: 4.333737:  80%|████████  | 4/5 [00:00&lt;00:00, 14.74it/s]
-Batch 5/5, Loss: 4.520595:  80%|████████  | 4/5 [00:00&lt;00:00, 14.74it/s]
-Batch 5/5, Loss: 4.520595: 100%|██████████| 5/5 [00:00&lt;00:00, 16.31it/s]
-Test Accuracy: 25.3%, Test Loss: 4.324450
+Batch 1/5, Loss: 6.819889:   0%|          | 0/5 [00:00&lt;?, ?it/s]
+Batch 2/5, Loss: 7.713788:   0%|          | 0/5 [00:00&lt;?, ?it/s]
+Batch 2/5, Loss: 7.713788:  40%|████      | 2/5 [00:00&lt;00:00, 14.40it/s]
+Batch 3/5, Loss: 7.059132:  40%|████      | 2/5 [00:00&lt;00:00, 14.40it/s]
+Batch 4/5, Loss: 7.284381:  40%|████      | 2/5 [00:00&lt;00:00, 14.40it/s]
+Batch 4/5, Loss: 7.284381:  80%|████████  | 4/5 [00:00&lt;00:00, 14.46it/s]
+Batch 5/5, Loss: 7.808757:  80%|████████  | 4/5 [00:00&lt;00:00, 14.46it/s]
+Batch 5/5, Loss: 7.808757: 100%|██████████| 5/5 [00:00&lt;00:00, 16.02it/s]
+Test Accuracy: 25.0%, Test Loss: 7.337189
 
-Train Accuracy: 30.90%, Average Train Loss: 1.605750, Test Accuracy: 25.3%, Average Test Loss: 4.324450
+Train Accuracy: 24.31%, Average Train Loss: 1.642491, Test Accuracy: 25.0%, Average Test Loss: 7.337189
 
 Epoch 2/2:
   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Epoch 2/2, Batch 1/5, Loss: 1.460681:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Epoch 2/2, Batch 1/5, Loss: 1.460681:  20%|██        | 1/5 [00:00&lt;00:01,  3.68it/s]
-Epoch 2/2, Batch 2/5, Loss: 1.178580:  20%|██        | 1/5 [00:00&lt;00:01,  3.68it/s]
-Epoch 2/2, Batch 2/5, Loss: 1.178580:  40%|████      | 2/5 [00:00&lt;00:00,  3.50it/s]
-Epoch 2/2, Batch 3/5, Loss: 1.232657:  40%|████      | 2/5 [00:00&lt;00:00,  3.50it/s]
-Epoch 2/2, Batch 3/5, Loss: 1.232657:  60%|██████    | 3/5 [00:00&lt;00:00,  3.22it/s]
-Epoch 2/2, Batch 4/5, Loss: 1.294503:  60%|██████    | 3/5 [00:01&lt;00:00,  3.22it/s]
-Epoch 2/2, Batch 4/5, Loss: 1.294503:  80%|████████  | 4/5 [00:01&lt;00:00,  3.38it/s]
-Epoch 2/2, Batch 5/5, Loss: 1.144602:  80%|████████  | 4/5 [00:01&lt;00:00,  3.38it/s]
-Epoch 2/2, Batch 5/5, Loss: 1.144602: 100%|██████████| 5/5 [00:01&lt;00:00,  4.14it/s]
-Epoch 2/2, Batch 5/5, Loss: 1.144602: 100%|██████████| 5/5 [00:01&lt;00:00,  3.77it/s]
+Epoch 2/2, Batch 1/5, Loss: 1.217304:   0%|          | 0/5 [00:00&lt;?, ?it/s]
+Epoch 2/2, Batch 1/5, Loss: 1.217304:  20%|██        | 1/5 [00:00&lt;00:01,  3.84it/s]
+Epoch 2/2, Batch 2/5, Loss: 1.259046:  20%|██        | 1/5 [00:00&lt;00:01,  3.84it/s]
+Epoch 2/2, Batch 2/5, Loss: 1.259046:  40%|████      | 2/5 [00:00&lt;00:00,  3.88it/s]
+Epoch 2/2, Batch 3/5, Loss: 1.252112:  40%|████      | 2/5 [00:00&lt;00:00,  3.88it/s]
+Epoch 2/2, Batch 3/5, Loss: 1.252112:  60%|██████    | 3/5 [00:00&lt;00:00,  3.86it/s]
+Epoch 2/2, Batch 4/5, Loss: 1.289975:  60%|██████    | 3/5 [00:01&lt;00:00,  3.86it/s]
+Epoch 2/2, Batch 4/5, Loss: 1.289975:  80%|████████  | 4/5 [00:01&lt;00:00,  3.86it/s]
+Epoch 2/2, Batch 5/5, Loss: 0.948479:  80%|████████  | 4/5 [00:01&lt;00:00,  3.86it/s]
+Epoch 2/2, Batch 5/5, Loss: 0.948479: 100%|██████████| 5/5 [00:01&lt;00:00,  4.66it/s]
+Epoch 2/2, Batch 5/5, Loss: 0.948479: 100%|██████████| 5/5 [00:01&lt;00:00,  4.27it/s]
 
   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Batch 1/5, Loss: 3.412822:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Batch 2/5, Loss: 3.751318:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Batch 2/5, Loss: 3.751318:  40%|████      | 2/5 [00:00&lt;00:00, 14.65it/s]
-Batch 3/5, Loss: 3.565414:  40%|████      | 2/5 [00:00&lt;00:00, 14.65it/s]
-Batch 4/5, Loss: 3.667956:  40%|████      | 2/5 [00:00&lt;00:00, 14.65it/s]
-Batch 4/5, Loss: 3.667956:  80%|████████  | 4/5 [00:00&lt;00:00, 13.85it/s]
-Batch 5/5, Loss: 3.836547:  80%|████████  | 4/5 [00:00&lt;00:00, 13.85it/s]
-Batch 5/5, Loss: 3.836547: 100%|██████████| 5/5 [00:00&lt;00:00, 15.58it/s]
-Test Accuracy: 24.7%, Test Loss: 3.646811
+Batch 1/5, Loss: 5.608168:   0%|          | 0/5 [00:00&lt;?, ?it/s]
+Batch 2/5, Loss: 6.350610:   0%|          | 0/5 [00:00&lt;?, ?it/s]
+Batch 2/5, Loss: 6.350610:  40%|████      | 2/5 [00:00&lt;00:00, 14.56it/s]
+Batch 3/5, Loss: 5.812220:  40%|████      | 2/5 [00:00&lt;00:00, 14.56it/s]
+Batch 4/5, Loss: 6.045706:  40%|████      | 2/5 [00:00&lt;00:00, 14.56it/s]
+Batch 4/5, Loss: 6.045706:  80%|████████  | 4/5 [00:00&lt;00:00, 14.55it/s]
+Batch 5/5, Loss: 6.459540:  80%|████████  | 4/5 [00:00&lt;00:00, 14.55it/s]
+Batch 5/5, Loss: 6.459540: 100%|██████████| 5/5 [00:00&lt;00:00, 16.12it/s]
+Test Accuracy: 25.0%, Test Loss: 6.055249
 
-Train Accuracy: 44.10%, Average Train Loss: 1.262205, Test Accuracy: 24.7%, Average Test Loss: 3.646811
+Train Accuracy: 45.83%, Average Train Loss: 1.193383, Test Accuracy: 25.0%, Average Test Loss: 6.055249
 </pre></div>
 </div>
 </section>
 <section id="option-2-train-it-with-pytorch-lightning">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Option 2: Train it with PyTorch Lightning</a><a class="headerlink" href="#option-2-train-it-with-pytorch-lightning" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Option 2: Train it with PyTorch Lightning</a><a class="headerlink" href="#option-2-train-it-with-pytorch-lightning" title="Permalink to this heading">#</a></h3>
 <img alt="Pytorch Lightning logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Lightning_Logo_v2.png" />
 <p>Alternatively, lightning provides a nice interface around torch modules
 which integrates the previous logic.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lightning</span> <span class="k">as</span> <span class="nn">L</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lightning</span> <span class="k">as</span> <span class="nn">L</span>
 <span class="kn">from</span> <span class="nn">torchmetrics.functional</span> <span class="kn">import</span> <span class="n">accuracy</span>
 
 
@@ -984,10 +1018,12 @@ which integrates the previous logic.</p>
         <span class="k">return</span> <span class="n">metrics</span>
 
     <span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span></a><span class="p">(</span><a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.parameters" title="torch.nn.Module.parameters" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">parameters</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="p">,</span>
-                                      <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="p">)</span>
-        <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span></a><span class="p">(</span><a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span>
-                                                               <span class="n">T_max</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_epochs</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span></a><span class="p">(</span>
+            <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.parameters" title="torch.nn.Module.parameters" class="sphx-glr-backref-module-torch-nn sphx-glr-backref-type-py-method"><span class="n">model</span><span class="o">.</span><span class="n">parameters</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lr</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weight_decay</span></a>
+        <span class="p">)</span>
+        <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a> <span class="o">=</span> <a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class"><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span></a><span class="p">(</span>
+            <a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_epochs</span></a> <span class="o">-</span> <span class="mi">1</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW" title="torch.optim.AdamW" class="sphx-glr-backref-module-torch-optim sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">optimizer</span></a><span class="p">],</span> <span class="p">[</span><a href="https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html#torch.optim.lr_scheduler.CosineAnnealingLR" title="torch.optim.lr_scheduler.CosineAnnealingLR" class="sphx-glr-backref-module-torch-optim-lr_scheduler sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scheduler</span></a><span class="p">]</span>
 
 
@@ -1005,8 +1041,7 @@ which integrates the previous logic.</p>
 TPU available: False, using: 0 TPU cores
 IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
-/home/runner/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:67: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
-Missing logger folder: /home/runner/work/braindecode/braindecode/examples/model_building/lightning_logs
+Missing logger folder: /home/bru/PycharmProjects/braindecode-bru/examples/model_building/lightning_logs
 
   | Name   | Type            | Params
 -------------------------------------------
@@ -1017,70 +1052,70 @@ Missing logger folder: /home/runner/work/braindecode/braindecode/examples/model_
 0         Non-trainable params
 47.4 K    Total params
 0.189     Total estimated model params size (MB)
-/home/runner/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:441: The &#39;train_dataloader&#39; does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
-/home/runner/.local/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py:293: The number of training batches (5) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+/home/bru/.local/lib/python3.8/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:441: The &#39;train_dataloader&#39; does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+/home/bru/.local/lib/python3.8/site-packages/lightning/pytorch/loops/fit_loop.py:298: The number of training batches (5) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
 
 Training: |          | 0/? [00:00&lt;?, ?it/s]
 Training:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 Epoch 0:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Epoch 0:  20%|██        | 1/5 [00:00&lt;00:01,  2.72it/s]
-Epoch 0:  20%|██        | 1/5 [00:00&lt;00:01,  2.72it/s, v_num=0]
-Epoch 0:  40%|████      | 2/5 [00:00&lt;00:00,  3.10it/s, v_num=0]
-Epoch 0:  40%|████      | 2/5 [00:00&lt;00:00,  3.10it/s, v_num=0]
-Epoch 0:  60%|██████    | 3/5 [00:00&lt;00:00,  3.26it/s, v_num=0]
-Epoch 0:  60%|██████    | 3/5 [00:00&lt;00:00,  3.26it/s, v_num=0]
-Epoch 0:  80%|████████  | 4/5 [00:01&lt;00:00,  3.36it/s, v_num=0]
-Epoch 0:  80%|████████  | 4/5 [00:01&lt;00:00,  3.36it/s, v_num=0]
-Epoch 0: 100%|██████████| 5/5 [00:01&lt;00:00,  3.74it/s, v_num=0]
-Epoch 0: 100%|██████████| 5/5 [00:01&lt;00:00,  3.74it/s, v_num=0]
-Epoch 0: 100%|██████████| 5/5 [00:01&lt;00:00,  3.74it/s, v_num=0]
+Epoch 0:  20%|██        | 1/5 [00:00&lt;00:01,  3.62it/s]
+Epoch 0:  20%|██        | 1/5 [00:00&lt;00:01,  3.61it/s, v_num=0]
+Epoch 0:  40%|████      | 2/5 [00:00&lt;00:00,  3.73it/s, v_num=0]
+Epoch 0:  40%|████      | 2/5 [00:00&lt;00:00,  3.72it/s, v_num=0]
+Epoch 0:  60%|██████    | 3/5 [00:00&lt;00:00,  3.82it/s, v_num=0]
+Epoch 0:  60%|██████    | 3/5 [00:00&lt;00:00,  3.82it/s, v_num=0]
+Epoch 0:  80%|████████  | 4/5 [00:01&lt;00:00,  3.84it/s, v_num=0]
+Epoch 0:  80%|████████  | 4/5 [00:01&lt;00:00,  3.84it/s, v_num=0]
+Epoch 0: 100%|██████████| 5/5 [00:01&lt;00:00,  4.27it/s, v_num=0]
+Epoch 0: 100%|██████████| 5/5 [00:01&lt;00:00,  4.27it/s, v_num=0]
+Epoch 0: 100%|██████████| 5/5 [00:01&lt;00:00,  4.27it/s, v_num=0]
 Epoch 0:   0%|          | 0/5 [00:00&lt;?, ?it/s, v_num=0]
 Epoch 1:   0%|          | 0/5 [00:00&lt;?, ?it/s, v_num=0]
-Epoch 1:  20%|██        | 1/5 [00:00&lt;00:01,  3.48it/s, v_num=0]
-Epoch 1:  20%|██        | 1/5 [00:00&lt;00:01,  3.48it/s, v_num=0]
-Epoch 1:  40%|████      | 2/5 [00:00&lt;00:00,  3.52it/s, v_num=0]
-Epoch 1:  40%|████      | 2/5 [00:00&lt;00:00,  3.52it/s, v_num=0]
-Epoch 1:  60%|██████    | 3/5 [00:00&lt;00:00,  3.57it/s, v_num=0]
-Epoch 1:  60%|██████    | 3/5 [00:00&lt;00:00,  3.57it/s, v_num=0]
-Epoch 1:  80%|████████  | 4/5 [00:01&lt;00:00,  3.56it/s, v_num=0]
-Epoch 1:  80%|████████  | 4/5 [00:01&lt;00:00,  3.55it/s, v_num=0]
-Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  3.93it/s, v_num=0]
-Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  3.93it/s, v_num=0]
-Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  3.93it/s, v_num=0]`Trainer.fit` stopped: `max_epochs=2` reached.
+Epoch 1:  20%|██        | 1/5 [00:00&lt;00:01,  3.98it/s, v_num=0]
+Epoch 1:  20%|██        | 1/5 [00:00&lt;00:01,  3.97it/s, v_num=0]
+Epoch 1:  40%|████      | 2/5 [00:00&lt;00:00,  3.99it/s, v_num=0]
+Epoch 1:  40%|████      | 2/5 [00:00&lt;00:00,  3.99it/s, v_num=0]
+Epoch 1:  60%|██████    | 3/5 [00:00&lt;00:00,  3.99it/s, v_num=0]
+Epoch 1:  60%|██████    | 3/5 [00:00&lt;00:00,  3.98it/s, v_num=0]
+Epoch 1:  80%|████████  | 4/5 [00:01&lt;00:00,  3.98it/s, v_num=0]
+Epoch 1:  80%|████████  | 4/5 [00:01&lt;00:00,  3.98it/s, v_num=0]
+Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  4.40it/s, v_num=0]
+Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  4.40it/s, v_num=0]
+Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  4.40it/s, v_num=0]`Trainer.fit` stopped: `max_epochs=2` reached.
 
-Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  3.92it/s, v_num=0]
-/home/runner/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/checkpoint_connector.py:145: `.test(ckpt_path=None)` was called without a model. The best model of the previous `fit` call will be used. You can pass `.test(ckpt_path=&#39;best&#39;)` to use the best model or `.test(ckpt_path=&#39;last&#39;)` to use the last model. If you pass a value, this warning will be silenced.
-Restoring states from the checkpoint path at /home/runner/work/braindecode/braindecode/examples/model_building/lightning_logs/version_0/checkpoints/epoch=1-step=10.ckpt
-Loaded model weights from the checkpoint at /home/runner/work/braindecode/braindecode/examples/model_building/lightning_logs/version_0/checkpoints/epoch=1-step=10.ckpt
-/home/runner/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:441: The &#39;test_dataloader&#39; does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
+Epoch 1: 100%|██████████| 5/5 [00:01&lt;00:00,  4.38it/s, v_num=0]
+/home/bru/.local/lib/python3.8/site-packages/lightning/pytorch/trainer/connectors/checkpoint_connector.py:145: `.test(ckpt_path=None)` was called without a model. The best model of the previous `fit` call will be used. You can pass `.test(ckpt_path=&#39;best&#39;)` to use the best model or `.test(ckpt_path=&#39;last&#39;)` to use the last model. If you pass a value, this warning will be silenced.
+Restoring states from the checkpoint path at /home/bru/PycharmProjects/braindecode-bru/examples/model_building/lightning_logs/version_0/checkpoints/epoch=1-step=10.ckpt
+Loaded model weights from the checkpoint at /home/bru/PycharmProjects/braindecode-bru/examples/model_building/lightning_logs/version_0/checkpoints/epoch=1-step=10.ckpt
+/home/bru/.local/lib/python3.8/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:441: The &#39;test_dataloader&#39; does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
 
 Testing: |          | 0/? [00:00&lt;?, ?it/s]
 Testing:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 Testing DataLoader 0:   0%|          | 0/5 [00:00&lt;?, ?it/s]
-Testing DataLoader 0:  20%|██        | 1/5 [00:00&lt;00:00,  9.95it/s]
-Testing DataLoader 0:  40%|████      | 2/5 [00:00&lt;00:00, 11.29it/s]
-Testing DataLoader 0:  60%|██████    | 3/5 [00:00&lt;00:00, 12.20it/s]
-Testing DataLoader 0:  80%|████████  | 4/5 [00:00&lt;00:00, 12.71it/s]
-Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 14.18it/s]
-Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 13.93it/s]
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Testing DataLoader 0:  20%|██        | 1/5 [00:00&lt;00:00, 10.82it/s]
+Testing DataLoader 0:  40%|████      | 2/5 [00:00&lt;00:00, 12.39it/s]
+Testing DataLoader 0:  60%|██████    | 3/5 [00:00&lt;00:00, 12.98it/s]
+Testing DataLoader 0:  80%|████████  | 4/5 [00:00&lt;00:00, 13.36it/s]
+Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 14.72it/s]
+Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 14.42it/s]
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
        Test metric             DataLoader 0
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-        test_acc                  0.34375
-        test_loss           1.5098872184753418
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        test_acc                  0.28125
+        test_loss           3.1978883743286133
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[{&#39;test_acc&#39;: 0.34375, &#39;test_loss&#39;: 1.5098872184753418}]
+[{&#39;test_acc&#39;: 0.28125, &#39;test_loss&#39;: 3.1978883743286133}]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 11.348 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  289 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 21.271 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  749 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-model-building-plot-train-in-pure-pytorch-and-pytorch-lightning-py">
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/66bb851a261b0b302f4dcb9e2f361aa6/plot_train_in_pure_pytorch_and_pytorch_lightning.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_train_in_pure_pytorch_and_pytorch_lightning.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a86d0c5f3a882a069df1683a708d3e25/plot_train_in_pure_pytorch_and_pytorch_lightning.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_train_in_pure_pytorch_and_pytorch_lightning.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/66bb851a261b0b302f4dcb9e2f361aa6/plot_train_in_pure_pytorch_and_pytorch_lightning.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_train_in_pure_pytorch_and_pytorch_lightning.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -1097,7 +1132,7 @@ Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="plot_regression.html"
@@ -1127,6 +1162,7 @@ Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
@@ -1163,8 +1199,8 @@ Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 
   
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
     <script src="https://braindecode.org/versionwarning.js"></script>
     
@@ -1173,7 +1209,7 @@ Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 
   
     <div class="footer-items__start">
       
-        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2018–2023, Braindecode Developers.</p></div>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2018–2024, Braindecode Developers.</p></div>
       
     </div>
   
@@ -1181,8 +1217,9 @@ Testing DataLoader 0: 100%|██████████| 5/5 [00:00&lt;00:00, 
   
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

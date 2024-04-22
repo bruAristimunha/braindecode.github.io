@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-theme="light">
+<html lang="en" data-content_root="" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>braindecode.regressor.EEGRegressor &#8212; Braindecode 0.8 documentation</title>
+    <title>braindecode.regressor.EEGRegressor &#8212; Braindecode 0.8.2 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=09706775" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=aad85e6b"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=19e75281"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7Q43R82K6D"></script>
     <script>
@@ -52,15 +52,9 @@
                 gtag('js', new Date());
                 gtag('config', 'G-7Q43R82K6D');
             </script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-7Q43R82K6D');
-            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'generated/braindecode.regressor.EEGRegressor';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.14.3';
+        DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://braindecode.org/stable/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.8';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
@@ -135,6 +129,7 @@
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -158,7 +153,8 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -218,6 +214,7 @@
       
         <div class="navbar-item navbar-persistent--container">
           
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -231,6 +228,7 @@
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -271,6 +269,7 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -304,7 +303,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -364,6 +364,7 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -403,7 +404,8 @@ document.write(`
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
@@ -416,27 +418,28 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGModuleMixin.html">braindecode.models.EEGModuleMixin</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ShallowFBCSPNet.html">braindecode.models.ShallowFBCSPNet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ATCNet.html">braindecode.models.ATCNet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.BIOT.html">braindecode.models.BIOT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.Deep4Net.html">braindecode.models.Deep4Net</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.DeepSleepNet.html">braindecode.models.DeepSleepNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGConformer.html">braindecode.models.EEGConformer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGInception.html">braindecode.models.EEGInception</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGInceptionERP.html">braindecode.models.EEGInceptionERP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGInceptionMI.html">braindecode.models.EEGInceptionMI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ATCNet.html">braindecode.models.ATCNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGITNet.html">braindecode.models.EEGITNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGNetv1.html">braindecode.models.EEGNetv1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGNetv4.html">braindecode.models.EEGNetv4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.HybridNet.html">braindecode.models.HybridNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGResNet.html">braindecode.models.EEGResNet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.TCN.html">braindecode.models.TCN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerChambon2018.html">braindecode.models.SleepStagerChambon2018</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGSimpleConv.html">braindecode.models.EEGSimpleConv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.HybridNet.html">braindecode.models.HybridNet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.Labram.html">braindecode.models.Labram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ShallowFBCSPNet.html">braindecode.models.ShallowFBCSPNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerBlanco2020.html">braindecode.models.SleepStagerBlanco2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerChambon2018.html">braindecode.models.SleepStagerChambon2018</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerEldele2021.html">braindecode.models.SleepStagerEldele2021</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.USleep.html">braindecode.models.USleep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.TCN.html">braindecode.models.TCN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.TIDNet.html">braindecode.models.TIDNet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.get_output_shape.html">braindecode.models.get_output_shape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.TimeDistributed.html">braindecode.models.TimeDistributed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.USleep.html">braindecode.models.USleep</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="braindecode.training.CroppedLoss.html">braindecode.training.CroppedLoss</a></li>
@@ -457,6 +460,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.BNCI2014001.html">braindecode.datasets.BNCI2014001</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.TUH.html">braindecode.datasets.TUH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.TUHAbnormal.html">braindecode.datasets.TUHAbnormal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.NMT.html">braindecode.datasets.NMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.SleepPhysionet.html">braindecode.datasets.SleepPhysionet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.BCICompetitionIVDataset4.html">braindecode.datasets.BCICompetitionIVDataset4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.create_from_X_y.html">braindecode.datasets.create_from_X_y</a></li>
@@ -584,15 +588,15 @@ document.write(`
 <div>
   
   <section id="braindecode-regressor-eegregressor">
-<h1>braindecode.regressor.EEGRegressor<a class="headerlink" href="#braindecode-regressor-eegregressor" title="Link to this heading">#</a></h1>
+<h1>braindecode.regressor.EEGRegressor<a class="headerlink" href="#braindecode-regressor-eegregressor" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">braindecode.regressor.</span></span><span class="sig-name descname"><span class="pre">EEGRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cropped</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator_train__shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator_train__drop_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_predictions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L19-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">braindecode.regressor.</span></span><span class="sig-name descname"><span class="pre">EEGRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cropped</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator_train__shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator_train__drop_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_predictions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L19-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor" title="Permalink to this definition">#</a></dt>
 <dd><p>Regressor that calls loss function directly.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>module</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>torch Module</em><em> (</em><em>class</em><em> or </em><em>instance</em><em>)</em>) – A PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a>. In general, the
+<li><p><strong>module</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>torch Module</em><em> (</em><em>class</em><em> or </em><em>instance</em><em>)</em>) – A PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a>. In general, the
 uninstantiated class should be passed, although instantiated
 modules will also work.</p></li>
 <li><p><strong>criterion</strong> (<em>torch criterion</em><em> (</em><em>class</em><em>, </em><em>default=torch.nn.MSELoss</em><em>)</em>) – Mean squared error loss.</p></li>
@@ -607,9 +611,9 @@ may keyboard-interrupt training at any time.</p></li>
 which would result in the same outcome. If <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> is -1,
 a single batch with all the data will be used during training
 and validation.</p></li>
-<li><p><strong>iterator_train</strong> (<em>torch DataLoader</em>) – The default PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="(in PyTorch v2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code></a> used for
+<li><p><strong>iterator_train</strong> (<em>torch DataLoader</em>) – The default PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="(in PyTorch v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code></a> used for
 training data.</p></li>
-<li><p><strong>iterator_valid</strong> (<em>torch DataLoader</em>) – The default PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="(in PyTorch v2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code></a> used for
+<li><p><strong>iterator_valid</strong> (<em>torch DataLoader</em>) – The default PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" title="(in PyTorch v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code></a> used for
 validation and test data, i.e. during inference.</p></li>
 <li><p><strong>dataset</strong> (<em>torch Dataset</em><em> (</em><em>default=skorch.dataset.Dataset</em><em>)</em>) – The dataset is necessary for the incoming data to work with
 pytorch’s <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>. It has to implement the <code class="docutils literal notranslate"><span class="pre">__len__</span></code> and
@@ -643,8 +647,8 @@ callbacks (e.g., for the callback with name <code class="docutils literal notran
 </p></li>
 <li><p><strong>predict_nonlinearity</strong> (<em>callable</em><em>, </em><em>None</em><em>, or </em><em>'auto'</em><em> (</em><em>default='auto'</em><em>)</em>) – <p>The nonlinearity to be applied to the prediction. When set to
 ‘auto’, infers the correct nonlinearity based on the criterion
-(softmax for <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss" title="(in PyTorch v2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code></a> and sigmoid for
-<a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#torch.nn.BCEWithLogitsLoss" title="(in PyTorch v2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BCEWithLogitsLoss</span></code></a>). If it cannot be inferred
+(softmax for <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss" title="(in PyTorch v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code></a> and sigmoid for
+<a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#torch.nn.BCEWithLogitsLoss" title="(in PyTorch v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BCEWithLogitsLoss</span></code></a>). If it cannot be inferred
 or if the parameter is None, just use the identity
 function. Don’t pass a lambda function if you want the net to be
 pickleable.</p>
@@ -673,7 +677,7 @@ summary scores at the end of each epoch are no longer printed.
 This can be useful when running a hyperparameter search. The
 summary scores are always logged in the history attribute,
 regardless of the verbose setting.</p></li>
-<li><p><strong>device</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://pytorch.org/docs/stable/tensor_attributes.html#torch.device" title="(in PyTorch v2.1)"><em>torch.device</em></a><em>, or </em><em>None</em><em> (</em><em>default='cpu'</em><em>)</em>) – The compute device to be used. If set to ‘cuda’ in order to use
+<li><p><strong>device</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://pytorch.org/docs/stable/tensor_attributes.html#torch.device" title="(in PyTorch v2.2)"><em>torch.device</em></a><em>, or </em><em>None</em><em> (</em><em>default='cpu'</em><em>)</em>) – The compute device to be used. If set to ‘cuda’ in order to use
 GPU acceleration, data in torch tensors will be pushed to cuda
 tensors before being sent to the module. If set to None, then
 all compute devices will be left unmodified.</p></li>
@@ -726,7 +730,7 @@ cropped mode.</p></li>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.prefixes_">
-<span class="sig-name descname"><span class="pre">prefixes_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.prefixes_" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">prefixes_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.prefixes_" title="Permalink to this definition">#</a></dt>
 <dd><p>Contains the prefixes to special parameters. E.g., since there
 is the <code class="docutils literal notranslate"><span class="pre">'optimizer'</span></code> prefix, it is possible to set parameters like
 so: <code class="docutils literal notranslate"><span class="pre">NeuralNet(...,</span> <span class="pre">optimizer__momentum=0.95)</span></code>. Some prefixes are
@@ -740,7 +744,7 @@ populated dynamically, based on what modules and criteria are defined.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.cuda_dependent_attributes_">
-<span class="sig-name descname"><span class="pre">cuda_dependent_attributes_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.cuda_dependent_attributes_" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cuda_dependent_attributes_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.cuda_dependent_attributes_" title="Permalink to this definition">#</a></dt>
 <dd><p>Contains a list of all attribute prefixes whose values depend on a
 CUDA device. If a <code class="docutils literal notranslate"><span class="pre">NeuralNet</span></code> trained with a CUDA-enabled device
 is unpickled on a machine without CUDA or with CUDA disabled, the
@@ -755,7 +759,7 @@ want to add other cuda-dependent attributes.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.initialized_">
-<span class="sig-name descname"><span class="pre">initialized_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.initialized_" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">initialized_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.initialized_" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the <code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNet</span></code> was initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -766,7 +770,7 @@ want to add other cuda-dependent attributes.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.module_">
-<span class="sig-name descname"><span class="pre">module_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.module_" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">module_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.module_" title="Permalink to this definition">#</a></dt>
 <dd><p>The instantiated module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -777,7 +781,7 @@ want to add other cuda-dependent attributes.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.criterion_">
-<span class="sig-name descname"><span class="pre">criterion_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.criterion_" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">criterion_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.criterion_" title="Permalink to this definition">#</a></dt>
 <dd><p>The instantiated criterion.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -788,7 +792,7 @@ want to add other cuda-dependent attributes.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.callbacks_">
-<span class="sig-name descname"><span class="pre">callbacks_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.callbacks_" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">callbacks_</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor.callbacks_" title="Permalink to this definition">#</a></dt>
 <dd><p>The complete (i.e. default and other), initialized callbacks, in
 a tuple with unique names.</p>
 <dl class="field-list simple">
@@ -800,7 +804,7 @@ a tuple with unique names.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor._modules">
-<span class="sig-name descname"><span class="pre">_modules</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor._modules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_modules</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor._modules" title="Permalink to this definition">#</a></dt>
 <dd><p>List of names of all modules that are torch modules. This list is
 collected dynamically when the net is initialized. Typically, there is no
 reason for a user to modify this list.</p>
@@ -813,7 +817,7 @@ reason for a user to modify this list.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor._criteria">
-<span class="sig-name descname"><span class="pre">_criteria</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor._criteria" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_criteria</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor._criteria" title="Permalink to this definition">#</a></dt>
 <dd><p>List of names of all criteria that are torch modules. This list is
 collected dynamically when the net is initialized. Typically, there is no
 reason for a user to modify this list.</p>
@@ -826,7 +830,7 @@ reason for a user to modify this list.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor._optimizers">
-<span class="sig-name descname"><span class="pre">_optimizers</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor._optimizers" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_optimizers</span></span><a class="headerlink" href="#braindecode.regressor.EEGRegressor._optimizers" title="Permalink to this definition">#</a></dt>
 <dd><p>List of names of all optimizers. This list is collected dynamically when
 the net is initialized. Typically, there is no reason for a user to modify
 this list.</p>
@@ -840,7 +844,7 @@ this list.</p>
 <p class="rubric">Methods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L171-L218"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.fit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L182-L229"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.fit" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize and fit the module.</p>
 <p>If the module was already initialized, by calling fit, the
 module will be re-initialized (unless <code class="docutils literal notranslate"><span class="pre">warm_start</span></code> is True).
@@ -890,7 +894,7 @@ the module and to the <code class="docutils literal notranslate"><span class="pr
 
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.get_iterator">
-<span class="sig-name descname"><span class="pre">get_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L75-L80"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.get_iterator" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L84-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.get_iterator" title="Permalink to this definition">#</a></dt>
 <dd><p>Get an iterator that allows to loop over the batches of the
 given data.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">self.iterator_train__batch_size</span></code> and/or
@@ -916,7 +920,7 @@ mini-batches.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.predict_proba">
-<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L82-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.predict_proba" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L91-L139"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.predict_proba" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the output of the module’s forward method as a numpy
 array. In case of cropped decoding returns averaged values for
 each trial.</p>
@@ -963,13 +967,13 @@ can’t be interpreted as probabilities. We advise you to use
 
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.regressor.EEGRegressor.predict_trials">
-<span class="sig-name descname"><span class="pre">predict_trials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L132-L169"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.predict_trials" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict_trials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/regressor.py#L141-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.regressor.EEGRegressor.predict_trials" title="Permalink to this definition">#</a></dt>
 <dd><p>Create trialwise predictions and optionally also return trialwise
 labels from cropped dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<a class="reference internal" href="braindecode.datasets.BaseConcatDataset.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset"><em>braindecode.datasets.BaseConcatDataset</em></a>) – A braindecode dataset to be predicted.</p></li>
+<li><p><strong>X</strong> (<a class="reference internal" href="../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset"><em>braindecode.datasets.BaseConcatDataset</em></a>) – A braindecode dataset to be predicted.</p></li>
 <li><p><strong>return_targets</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – If True, additionally returns the trial targets.</p></li>
 </ul>
 </dd>
@@ -1000,7 +1004,7 @@ value, multiple values, or a sequence.</p></li>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="braindecode.classifier.EEGClassifier.html"
@@ -1030,6 +1034,7 @@ value, multiple values, or a sequence.</p></li>
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
@@ -1068,8 +1073,8 @@ value, multiple values, or a sequence.</p></li>
   
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
     <script src="https://braindecode.org/versionwarning.js"></script>
     
@@ -1078,7 +1083,7 @@ value, multiple values, or a sequence.</p></li>
   
     <div class="footer-items__start">
       
-        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2018–2023, Braindecode Developers.</p></div>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2018–2024, Braindecode Developers.</p></div>
       
     </div>
   
@@ -1086,8 +1091,9 @@ value, multiple values, or a sequence.</p></li>
   
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

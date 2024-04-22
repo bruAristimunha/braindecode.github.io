@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-theme="light">
+<html lang="en" data-content_root="" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>braindecode.datasets.BaseConcatDataset &#8212; Braindecode 0.8 documentation</title>
+    <title>braindecode.datasets.BaseConcatDataset &#8212; Braindecode 0.8.2 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=09706775" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=aad85e6b"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=19e75281"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7Q43R82K6D"></script>
     <script>
@@ -52,15 +52,9 @@
                 gtag('js', new Date());
                 gtag('config', 'G-7Q43R82K6D');
             </script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-7Q43R82K6D');
-            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'generated/braindecode.datasets.BaseConcatDataset';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.14.3';
+        DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://braindecode.org/stable/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.8';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
@@ -135,6 +129,7 @@
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -158,7 +153,8 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -218,6 +214,7 @@
       
         <div class="navbar-item navbar-persistent--container">
           
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -231,6 +228,7 @@
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -271,6 +269,7 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -304,7 +303,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -364,6 +364,7 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -403,7 +404,8 @@ document.write(`
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
@@ -416,27 +418,28 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGModuleMixin.html">braindecode.models.EEGModuleMixin</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ShallowFBCSPNet.html">braindecode.models.ShallowFBCSPNet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ATCNet.html">braindecode.models.ATCNet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.BIOT.html">braindecode.models.BIOT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.Deep4Net.html">braindecode.models.Deep4Net</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.DeepSleepNet.html">braindecode.models.DeepSleepNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGConformer.html">braindecode.models.EEGConformer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGInception.html">braindecode.models.EEGInception</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGInceptionERP.html">braindecode.models.EEGInceptionERP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGInceptionMI.html">braindecode.models.EEGInceptionMI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ATCNet.html">braindecode.models.ATCNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGITNet.html">braindecode.models.EEGITNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGNetv1.html">braindecode.models.EEGNetv1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGNetv4.html">braindecode.models.EEGNetv4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.HybridNet.html">braindecode.models.HybridNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGResNet.html">braindecode.models.EEGResNet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.TCN.html">braindecode.models.TCN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerChambon2018.html">braindecode.models.SleepStagerChambon2018</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.EEGSimpleConv.html">braindecode.models.EEGSimpleConv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.HybridNet.html">braindecode.models.HybridNet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.Labram.html">braindecode.models.Labram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.ShallowFBCSPNet.html">braindecode.models.ShallowFBCSPNet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerBlanco2020.html">braindecode.models.SleepStagerBlanco2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerChambon2018.html">braindecode.models.SleepStagerChambon2018</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.SleepStagerEldele2021.html">braindecode.models.SleepStagerEldele2021</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.USleep.html">braindecode.models.USleep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.TCN.html">braindecode.models.TCN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.models.TIDNet.html">braindecode.models.TIDNet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.get_output_shape.html">braindecode.models.get_output_shape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="braindecode.models.TimeDistributed.html">braindecode.models.TimeDistributed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.models.USleep.html">braindecode.models.USleep</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="braindecode.training.CroppedLoss.html">braindecode.training.CroppedLoss</a></li>
@@ -457,6 +460,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.BNCI2014001.html">braindecode.datasets.BNCI2014001</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.TUH.html">braindecode.datasets.TUH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.TUHAbnormal.html">braindecode.datasets.TUHAbnormal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.NMT.html">braindecode.datasets.NMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.SleepPhysionet.html">braindecode.datasets.SleepPhysionet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.BCICompetitionIVDataset4.html">braindecode.datasets.BCICompetitionIVDataset4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="braindecode.datasets.create_from_X_y.html">braindecode.datasets.create_from_X_y</a></li>
@@ -584,10 +588,10 @@ document.write(`
 <div>
   
   <section id="braindecode-datasets-baseconcatdataset">
-<h1>braindecode.datasets.BaseConcatDataset<a class="headerlink" href="#braindecode-datasets-baseconcatdataset" title="Link to this heading">#</a></h1>
+<h1>braindecode.datasets.BaseConcatDataset<a class="headerlink" href="#braindecode-datasets-baseconcatdataset" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="braindecode.datasets.BaseConcatDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">braindecode.datasets.</span></span><span class="sig-name descname"><span class="pre">BaseConcatDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L386-L754"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">braindecode.datasets.</span></span><span class="sig-name descname"><span class="pre">BaseConcatDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../source/braindecode.datasets.html#braindecode.datasets.BaseDataset" title="braindecode.datasets.BaseDataset"><span class="pre">BaseDataset</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset"><span class="pre">BaseConcatDataset</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../source/braindecode.datasets.html#braindecode.datasets.WindowsDataset" title="braindecode.datasets.WindowsDataset"><span class="pre">WindowsDataset</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_transform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L418-L833"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset" title="Permalink to this definition">#</a></dt>
 <dd><p>A base class for concatenated datasets. Holds either mne.Raw or
 mne.Epoch in self.datasets and has a pandas DataFrame with additional
 description.</p>
@@ -602,7 +606,7 @@ description.</p>
 <p class="rubric">Methods</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.datasets.BaseConcatDataset.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L490-L514"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.get_metadata" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L537-L568"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.get_metadata" title="Permalink to this definition">#</a></dt>
 <dd><p>Concatenate the metadata and description of the wrapped Epochs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -618,7 +622,7 @@ for each window.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.datasets.BaseConcatDataset.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L628-L709"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.save" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L698-L785"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.save" title="Permalink to this definition">#</a></dt>
 <dd><p>Save datasets to files by creating one subdirectory for each dataset:
 path/</p>
 <blockquote>
@@ -660,7 +664,7 @@ its original position.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.datasets.BaseConcatDataset.set_description">
-<span class="sig-name descname"><span class="pre">set_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L611-L626"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.set_description" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pd.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L679-L696"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.set_description" title="Permalink to this definition">#</a></dt>
 <dd><p>Update (add or overwrite) the dataset description.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -676,7 +680,7 @@ dataset description.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="braindecode.datasets.BaseConcatDataset.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L436-L488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.split" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../source/braindecode.datasets.html#braindecode.datasets.BaseConcatDataset" title="braindecode.datasets.BaseConcatDataset"><span class="pre">BaseConcatDataset</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/braindecode/braindecode//blob/master/braindecode/datasets/base.py#L473-L535"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#braindecode.datasets.BaseConcatDataset.split" title="Permalink to this definition">#</a></dt>
 <dd><p>Split the dataset based on information listed in its description
 DataFrame or based on indices.</p>
 <dl class="field-list simple">
@@ -690,7 +694,7 @@ datapoints of that split.
 If a dict then each key will be used in the returned
 splits dict and each value should be a list of int.</p></li>
 <li><p><strong>property</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Some property which is listed in info DataFrame.</p></li>
-<li><p><strong>split_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) – List of indices to be combined in a subset.
+<li><p><strong>split_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) – List of indices to be combined in a subset.
 It can be a list of int or a list of list of int.</p></li>
 </ul>
 </dd>
@@ -707,47 +711,8 @@ dataset as value.</p>
 </dd></dl>
 
 <section id="examples-using-braindecode-datasets-baseconcatdataset">
-<h2>Examples using <code class="docutils literal notranslate"><span class="pre">braindecode.datasets.BaseConcatDataset</span></code><a class="headerlink" href="#examples-using-braindecode-datasets-baseconcatdataset" title="Link to this heading">#</a></h2>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Cropped Decoding on BCIC IV 2a Dataset"><img alt="" src="../_images/sphx_glr_plot_bcic_iv_2a_moabb_cropped_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/model_building/plot_bcic_iv_2a_moabb_cropped.html#sphx-glr-auto-examples-model-building-plot-bcic-iv-2a-moabb-cropped-py"><span class="std std-ref">Cropped Decoding on BCIC IV 2a Dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Cropped Decoding on BCIC IV 2a Dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows you how to train and test deep learning models with Braindecode in a classi..."><img alt="" src="../_images/sphx_glr_plot_bcic_iv_2a_moabb_trial_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/model_building/plot_bcic_iv_2a_moabb_trial.html#sphx-glr-auto-examples-model-building-plot-bcic-iv-2a-moabb-trial-py"><span class="std std-ref">Basic Brain Decoding on EEG Data</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Basic Brain Decoding on EEG Data</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows you how to properly train, tune and test your deep learning models with Bra..."><img alt="" src="../_images/sphx_glr_plot_how_train_test_and_tune_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/model_building/plot_how_train_test_and_tune.html#sphx-glr-auto-examples-model-building-plot-how-train-test-and-tune-py"><span class="std std-ref">How to train, test and tune your model?</span></a></p>
-  <div class="sphx-glr-thumbnail-title">How to train, test and tune your model?</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The braindecode provides some compatibility with scikit-learn. This allows us to use scikit-lea..."><img alt="" src="../_images/sphx_glr_plot_hyperparameter_tuning_with_scikit-learn_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/model_building/plot_hyperparameter_tuning_with_scikit-learn.html#sphx-glr-auto-examples-model-building-plot-hyperparameter-tuning-with-scikit-learn-py"><span class="std std-ref">Hyperparameter tuning with scikit-learn</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Hyperparameter tuning with scikit-learn</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create a CNN regressor from a CNN classifier by removing softmax func..."><img alt="" src="../_images/sphx_glr_plot_regression_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/model_building/plot_regression.html#sphx-glr-auto-examples-model-building-plot-regression-py"><span class="std std-ref">Convolutional neural network regression model on fake data.</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Convolutional neural network regression model on fake data.</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows you how to train a Braindecode model with PyTorch. The data preparation and..."><img alt="" src="../_images/sphx_glr_plot_train_in_pure_pytorch_and_pytorch_lightning_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/model_building/plot_train_in_pure_pytorch_and_pytorch_lightning.html#sphx-glr-auto-examples-model-building-plot-train-in-pure-pytorch-and-pytorch-lightning-py"><span class="std std-ref">Training a Braindecode model in PyTorch</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Training a Braindecode model in PyTorch</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we compare the execution time and memory requirements of preprocessing data wi..."><img alt="" src="../_images/sphx_glr_plot_benchmark_preprocessing_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_benchmark_preprocessing.html#sphx-glr-auto-examples-datasets-io-plot-benchmark-preprocessing-py"><span class="std std-ref">Benchmarking preprocessing with parallelization and serialization</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Benchmarking preprocessing with parallelization and serialization</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to convert data X and y as numpy arrays to a braindecode compatible data..."><img alt="" src="../_images/sphx_glr_plot_custom_dataset_example_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_custom_dataset_example.html#sphx-glr-auto-examples-datasets-io-plot-custom-dataset-example-py"><span class="std std-ref">Custom Dataset Example</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Custom Dataset Example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to load and save braindecode datasets."><img alt="" src="../_images/sphx_glr_plot_load_save_datasets_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_load_save_datasets.html#sphx-glr-auto-examples-datasets-io-plot-load-save-datasets-py"><span class="std std-ref">Load and save dataset example</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Load and save dataset example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="MNE Dataset Example"><img alt="" src="../_images/sphx_glr_plot_mne_dataset_example_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_mne_dataset_example.html#sphx-glr-auto-examples-datasets-io-plot-mne-dataset-example-py"><span class="std std-ref">MNE Dataset Example</span></a></p>
-  <div class="sphx-glr-thumbnail-title">MNE Dataset Example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we show how to fetch and prepare a MOABB dataset for usage with Braindecode."><img alt="" src="../_images/sphx_glr_plot_moabb_dataset_example_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_moabb_dataset_example.html#sphx-glr-auto-examples-datasets-io-plot-moabb-dataset-example-py"><span class="std std-ref">MOABB Dataset Example</span></a></p>
-  <div class="sphx-glr-thumbnail-title">MOABB Dataset Example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we aim to show multiple ways of how you can split your datasets for training, ..."><img alt="" src="../_images/sphx_glr_plot_split_dataset_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_split_dataset.html#sphx-glr-auto-examples-datasets-io-plot-split-dataset-py"><span class="std std-ref">Split Dataset Example</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Split Dataset Example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Welcome to this tutorial where we demonstrate how to work with multiple discrete  targets for e..."><img alt="" src="../_images/sphx_glr_plot_tuh_discrete_multitarget_thumb.png" />
-<p><a class="reference internal" href="../auto_examples/datasets_io/plot_tuh_discrete_multitarget.html#sphx-glr-auto-examples-datasets-io-plot-tuh-discrete-multitarget-py"><span class="std std-ref">Multiple discrete targets with the TUH EEG Corpus</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Multiple discrete targets with the TUH EEG Corpus</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows you how to train and test deep learning models with Braindecode on ECoG BCI..."><img alt="" src="../_images/sphx_glr_plot_bcic_iv_4_ecog_cropped_thumb.png" />
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">braindecode.datasets.BaseConcatDataset</span></code><a class="headerlink" href="#examples-using-braindecode-datasets-baseconcatdataset" title="Permalink to this heading">#</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows you how to train and test deep learning models with Braindecode on ECoG BCI..."><img alt="" src="../_images/sphx_glr_plot_bcic_iv_4_ecog_cropped_thumb.png" />
 <p><a class="reference internal" href="../auto_examples/advanced_training/plot_bcic_iv_4_ecog_cropped.html#sphx-glr-auto-examples-advanced-training-plot-bcic-iv-4-ecog-cropped-py"><span class="std std-ref">Fingers flexion cropped decoding on BCIC IV 4 ECoG Dataset</span></a></p>
   <div class="sphx-glr-thumbnail-title">Fingers flexion cropped decoding on BCIC IV 4 ECoG Dataset</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to train EEG deep models with data augmentation. It follows the trial-w..."><img alt="" src="../_images/sphx_glr_plot_data_augmentation_thumb.png" />
@@ -786,7 +751,7 @@ dataset as value.</p>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="braindecode.datasets.BaseDataset.html"
@@ -816,6 +781,7 @@ dataset as value.</p>
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
@@ -846,8 +812,8 @@ dataset as value.</p>
   
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
     <script src="https://braindecode.org/versionwarning.js"></script>
     
@@ -856,7 +822,7 @@ dataset as value.</p>
   
     <div class="footer-items__start">
       
-        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2018–2023, Braindecode Developers.</p></div>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2018–2024, Braindecode Developers.</p></div>
       
     </div>
   
@@ -864,8 +830,9 @@ dataset as value.</p>
   
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>
